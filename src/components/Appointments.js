@@ -12,12 +12,14 @@ const Appointments = () => {
     reason: "",
   });
 
+  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000"; 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitting Data:", formData); // ✅ Log data before sending
 
     try {
-      const response = await axios.post("http://localhost:5000/api/appointments", formData, {
+      const response = await axios.post(`${API_BASE_URL}/api/appointments`, formData, {
         headers: { "Content-Type": "application/json" },
       });
 
