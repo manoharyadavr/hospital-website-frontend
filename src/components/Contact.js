@@ -11,12 +11,14 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const API_BASE_URL = "https://hospital-website-v1-1.onrender.com" || "http://localhost:5000"; 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/contact", formData);
+      const response = await axios.post(`${API_BASE_URL}/api/appointments`, formData);
       alert(response.data.message);
       setFormData({ name: "", email: "", message: "" }); // ✅ Reset form
     } catch (error) {
