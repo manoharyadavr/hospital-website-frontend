@@ -18,7 +18,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/contact`, formData);
+      const response = await axios.post(`${API_BASE_URL}/contact`, formData);
       alert(response.data.message);
       setFormData({ name: "", email: "", message: "" }); // ✅ Reset form
     } catch (error) {
