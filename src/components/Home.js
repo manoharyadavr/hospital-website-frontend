@@ -97,7 +97,7 @@ const Home = () => {
 >
   {/* Background Image */}
   <img 
-    src="/images/hospital.jpg"  // Change this to your image path
+    src="../images/hospital.jpg"  // Change this to your image path
     alt="Hospital Background"
     className="absolute w-full h-full object-cover"
   />
